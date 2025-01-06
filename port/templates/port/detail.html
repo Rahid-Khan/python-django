@@ -1,0 +1,6 @@
+<h1>{{ question.test }}</h1>
+<ul>
+{% for choice in question.answer.all %}
+    <li>{{ choice.answer }}</li>
+{% endfor %}
+</ul>
