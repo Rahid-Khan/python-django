@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your models here.
 class Question(models.Model):
     test  = models.CharField(max_length=200)
-    data = models.DateTimeField("date published")
+    pub_date = models.DateTimeField("date published")
     
     def __str__(self):
         return self.test
@@ -19,7 +19,7 @@ class Question(models.Model):
 class answer(models.Model):
     Question = models.ForeignKey(Question, on_delete = models.CASCADE)
     choice_test = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+    vote = models.IntegerField(default=0)
     
     def __str__(self):
         return self.choice_test
